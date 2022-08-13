@@ -13,6 +13,13 @@
 		E33AEFB528A7B12E0061512F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33AEFB328A7B12E0061512F /* Main.storyboard */; };
 		E33AEFB728A7B1350061512F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E33AEFB628A7B1350061512F /* Assets.xcassets */; };
 		E33AEFBA28A7B1350061512F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33AEFB828A7B1350061512F /* LaunchScreen.storyboard */; };
+		E33AEFC828A7B2D90061512F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFC728A7B2D90061512F /* APIRouter.swift */; };
+		E33AEFCA28A7B4350061512F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFC928A7B4350061512F /* Constant.swift */; };
+		E33AEFCC28A7B4560061512F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFCB28A7B4560061512F /* Enums.swift */; };
+		E33AEFEA28A7B5D90061512F /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFE928A7B5D90061512F /* BaseRequest.swift */; };
+		E33AEFEC28A7B62E0061512F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFEB28A7B62E0061512F /* BaseViewModel.swift */; };
+		E33AEFEF28A7B66B0061512F /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFEE28A7B66B0061512F /* Print.swift */; };
+		E33AEFF128A7B69C0061512F /* APIRouterStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFF028A7B69C0061512F /* APIRouterStructure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,17 @@
 		E33AEFB628A7B1350061512F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E33AEFB928A7B1350061512F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E33AEFBB28A7B1350061512F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E33AEFC728A7B2D90061512F /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		E33AEFC928A7B4350061512F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E33AEFCB28A7B4560061512F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		E33AEFCE28A7B48B0061512F /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
+		E33AEFE628A7B5A70061512F /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		E33AEFE828A7B5A70061512F /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		E33AEFE928A7B5D90061512F /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		E33AEFEB28A7B62E0061512F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		E33AEFED28A7B6410061512F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E33AEFEE28A7B66B0061512F /* Print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Print.swift; sourceTree = "<group>"; };
+		E33AEFF028A7B69C0061512F /* APIRouterStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouterStructure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +79,6 @@
 				E33AEFC228A7B1B60061512F /* Storyboard */,
 				E33AEFC628A7B2010061512F /* Others */,
 				E33AEFC128A7B1870061512F /* SupportingFiles */,
-				E33AEFB128A7B12E0061512F /* ViewController.swift */,
 			);
 			path = CombineOnUIKit;
 			sourceTree = "<group>";
@@ -97,6 +114,9 @@
 		E33AEFC428A7B1D00061512F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E33AEFCF28A7B5310061512F /* Model */,
+				E33AEFD028A7B5390061512F /* View */,
+				E33AEFD128A7B53E0061512F /* ViewModel */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -104,6 +124,8 @@
 		E33AEFC528A7B1E00061512F /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
+				E33AEFF028A7B69C0061512F /* APIRouterStructure.swift */,
+				E33AEFC728A7B2D90061512F /* APIRouter.swift */,
 			);
 			name = NetworkServices;
 			sourceTree = "<group>";
@@ -111,8 +133,55 @@
 		E33AEFC628A7B2010061512F /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				E33AEFC928A7B4350061512F /* Constant.swift */,
+				E33AEFCB28A7B4560061512F /* Enums.swift */,
+				E33AEFEE28A7B66B0061512F /* Print.swift */,
+				E33AEFE428A7B5A70061512F /* CommonModels */,
+				E33AEFCD28A7B48B0061512F /* Validations */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		E33AEFCD28A7B48B0061512F /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				E33AEFCE28A7B48B0061512F /* ValidationResult.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
+		E33AEFCF28A7B5310061512F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E33AEFE828A7B5A70061512F /* LoginRequest.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E33AEFD028A7B5390061512F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E33AEFB128A7B12E0061512F /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E33AEFD128A7B53E0061512F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E33AEFED28A7B6410061512F /* LoginViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		E33AEFE428A7B5A70061512F /* CommonModels */ = {
+			isa = PBXGroup;
+			children = (
+				E33AEFEB28A7B62E0061512F /* BaseViewModel.swift */,
+				E33AEFE628A7B5A70061512F /* BaseResponse.swift */,
+				E33AEFE928A7B5D90061512F /* BaseRequest.swift */,
+			);
+			path = CommonModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,7 +256,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E33AEFB228A7B12E0061512F /* ViewController.swift in Sources */,
+				E33AEFC828A7B2D90061512F /* APIRouter.swift in Sources */,
+				E33AEFCA28A7B4350061512F /* Constant.swift in Sources */,
+				E33AEFF128A7B69C0061512F /* APIRouterStructure.swift in Sources */,
+				E33AEFEA28A7B5D90061512F /* BaseRequest.swift in Sources */,
 				E33AEFAE28A7B12E0061512F /* AppDelegate.swift in Sources */,
+				E33AEFEC28A7B62E0061512F /* BaseViewModel.swift in Sources */,
+				E33AEFCC28A7B4560061512F /* Enums.swift in Sources */,
+				E33AEFEF28A7B66B0061512F /* Print.swift in Sources */,
 				E33AEFB028A7B12E0061512F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
