@@ -56,15 +56,63 @@
 		E33AEFAC28A7B12E0061512F /* CombineOnUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				E33AEFAD28A7B12E0061512F /* AppDelegate.swift */,
-				E33AEFAF28A7B12E0061512F /* SceneDelegate.swift */,
+				E33AEFC528A7B1E00061512F /* NetworkServices */,
+				E33AEFC328A7B1C80061512F /* Modules */,
+				E33AEFC228A7B1B60061512F /* Storyboard */,
+				E33AEFC628A7B2010061512F /* Others */,
+				E33AEFC128A7B1870061512F /* SupportingFiles */,
 				E33AEFB128A7B12E0061512F /* ViewController.swift */,
-				E33AEFB328A7B12E0061512F /* Main.storyboard */,
-				E33AEFB628A7B1350061512F /* Assets.xcassets */,
-				E33AEFB828A7B1350061512F /* LaunchScreen.storyboard */,
-				E33AEFBB28A7B1350061512F /* Info.plist */,
 			);
 			path = CombineOnUIKit;
+			sourceTree = "<group>";
+		};
+		E33AEFC128A7B1870061512F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E33AEFAD28A7B12E0061512F /* AppDelegate.swift */,
+				E33AEFAF28A7B12E0061512F /* SceneDelegate.swift */,
+				E33AEFB828A7B1350061512F /* LaunchScreen.storyboard */,
+				E33AEFB628A7B1350061512F /* Assets.xcassets */,
+				E33AEFBB28A7B1350061512F /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E33AEFC228A7B1B60061512F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E33AEFB328A7B12E0061512F /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		E33AEFC328A7B1C80061512F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E33AEFC428A7B1D00061512F /* Login */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		E33AEFC428A7B1D00061512F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		E33AEFC528A7B1E00061512F /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NetworkServices;
+			sourceTree = "<group>";
+		};
+		E33AEFC628A7B2010061512F /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
