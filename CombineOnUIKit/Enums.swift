@@ -35,7 +35,10 @@ enum HTTPHeaderValue: String {
 }
 
 
-enum InternalError: LocalizedError{
+enum APIError: Error{
     case unexpectedError
     case unauthorized
+    case userNotFound
+    case postNotFound
 }
+

@@ -8,6 +8,6 @@
 import Foundation
 
 struct ValidationResult {
-    let success: Bool?
-    let error:String?
+    let success: Bool
+    let validationError:String?
 }
