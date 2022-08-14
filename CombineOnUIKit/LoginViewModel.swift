@@ -10,8 +10,8 @@ import Combine
 
 class LoginViewModel: BaseViewModel {
     
-    var user:[User]?
-    var comments:[Comment]?
+    private (set) var user:[User]?
+    @Published private (set) var comments:[Comment]?
     
     let combine = NetworkService_Combine()
     let awaitAsync = NetworkService_AwaitAsync()
@@ -75,7 +75,7 @@ extension LoginViewModel{
             guard case .success(let posts) = postsResult, let post = posts.first else {return}
             let commentResult = await awaitAsync.getComment(request: APIRouterStructure(apiRouter: .comment(postId: post.id)).asURLRequest())
             guard case .success(let comments) = commentResult else {return}
-            
+            self.comments = comments
             //Update View on Main thread after getting data
             print(comments)
         }

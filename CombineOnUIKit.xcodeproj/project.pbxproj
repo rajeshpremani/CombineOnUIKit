@@ -26,6 +26,8 @@
 		E33AEFF628A7B98A0061512F /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFE628A7B5A70061512F /* BaseResponse.swift */; };
 		E33AEFF728A7B98F0061512F /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFCE28A7B48B0061512F /* ValidationResult.swift */; };
 		E33AEFF928A7BAF00061512F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFF828A7BAF00061512F /* NetworkService.swift */; };
+		E33AEFFC28A96CAD0061512F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFFA28A96CAD0061512F /* TableViewCell.swift */; };
+		E33AEFFD28A96CAD0061512F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E33AEFFB28A96CAD0061512F /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		E33AEFF028A7B69C0061512F /* APIRouterStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouterStructure.swift; sourceTree = "<group>"; };
 		E33AEFF228A7B9390061512F /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
 		E33AEFF828A7BAF00061512F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E33AEFFA28A96CAD0061512F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		E33AEFFB28A96CAD0061512F /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				E33AEFB128A7B12E0061512F /* ViewController.swift */,
+				E33AEFFA28A96CAD0061512F /* TableViewCell.swift */,
+				E33AEFFB28A96CAD0061512F /* TableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E33AEFBA28A7B1350061512F /* LaunchScreen.storyboard in Resources */,
+				E33AEFFD28A96CAD0061512F /* TableViewCell.xib in Resources */,
 				E33AEFB728A7B1350061512F /* Assets.xcassets in Resources */,
 				E33AEFB528A7B12E0061512F /* Main.storyboard in Resources */,
 			);
@@ -279,6 +286,7 @@
 				E33AEFCC28A7B4560061512F /* Enums.swift in Sources */,
 				E33AEFF328A7B9390061512F /* LoginValidation.swift in Sources */,
 				E33AEFF628A7B98A0061512F /* BaseResponse.swift in Sources */,
+				E33AEFFC28A96CAD0061512F /* TableViewCell.swift in Sources */,
 				E33AEFEF28A7B66B0061512F /* Print.swift in Sources */,
 				E33AEFB028A7B12E0061512F /* SceneDelegate.swift in Sources */,
 			);
