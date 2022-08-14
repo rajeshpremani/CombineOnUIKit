@@ -14,10 +14,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        viewModel.getPost2()
-//        viewModel.getPost()
         
-        viewModel.fetchingComments_WithCombine()
+//        viewModel.fetchingComments_WithCombine()
+        viewModel.fetchingComments_WithAwaitAsync()
     }
 }
 

@@ -13,7 +13,8 @@ class LoginViewModel: BaseViewModel {
     var user:[User]?
     var comments:[Comment]?
     
-    let combine = NetworkService()
+    let combine = NetworkService_Combine()
+    let awaitAsync = NetworkService_AwaitAsync()
     private var subscribers = Set<AnyCancellable>()
     
     
@@ -32,49 +33,6 @@ class LoginViewModel: BaseViewModel {
             print(users)
         }.store(in: &subscribers)
     }
-    
-    func getPost2(){
-        combine.getPost(request: APIRouterStructure(apiRouter: .posts(userId: 10)).asURLRequest())
-            .sink { result in
-            switch result{
-            case .failure(let error):
-                print("Error ",error.localizedDescription)
-            default:
-                print("Completed")
-            }
-        } receiveValue: { posts in
-            print(posts)
-        }.store(in: &subscribers)
-    }
-    
-    func getPost(){
-        combine.getPost()//request: APIRouterStructure(apiRouter: .post(userId: 10)).asURLRequest())
-            .sink { result in
-            switch result{
-            case .failure(let error):
-                print("Error ",error.localizedDescription)
-            default:
-                print("Completed")
-            }
-        } receiveValue: { posts in
-            print(posts)
-        }.store(in: &subscribers)
-    }
-    
-    func getComment(){
-        combine.getComment(request: APIRouterStructure(apiRouter: .comment(postId: 100)).asURLRequest())
-            .sink { result in
-            switch result{
-            case .failure(let error):
-                print("Error ",error.localizedDescription)
-            default:
-                print("Completed")
-            }
-        } receiveValue: { posts in
-            print(posts)
-        }.store(in: &subscribers)
-    }
-    
     
     ///Multiple API Call using combine
     func fetchingComments_WithCombine(){
@@ -104,5 +62,22 @@ class LoginViewModel: BaseViewModel {
             print("Comments -->", comments)
         }.store(in: &subscribers)
 
+    }
+}
+
+//Await Async
+extension LoginViewModel{
+    func fetchingComments_WithAwaitAsync(){
+        Task(priority: .background) {
+            let usersResult = await awaitAsync.getUser(request: APIRouterStructure(apiRouter: .users).asURLRequest())
+            guard case .success(let users) = usersResult, let user = users.first else {return}
+            let postsResult = await awaitAsync.getPost(request: APIRouterStructure(apiRouter: .posts(userId: user.id)).asURLRequest())
+            guard case .success(let posts) = postsResult, let post = posts.first else {return}
+            let commentResult = await awaitAsync.getComment(request: APIRouterStructure(apiRouter: .comment(postId: post.id)).asURLRequest())
+            guard case .success(let comments) = commentResult else {return}
+            
+            //Update View on Main thread after getting data
+            print(comments)
+        }
     }
 }

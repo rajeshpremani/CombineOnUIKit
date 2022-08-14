@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 
-class NetworkService{
+///Using Combine
+class NetworkService_Combine{
     
     func getApiData<T:Decodable>(requestUrl:URLRequest, resultType:T.Type){
         URLSession.shared.dataTask(with: requestUrl) { responseData, httpResponse, error in
@@ -46,15 +47,6 @@ class NetworkService{
             .eraseToAnyPublisher()
     }
     
-    func getPost() -> AnyPublisher<[Post], Error>{
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts?userId=10")
-        return URLSession.shared.dataTaskPublisher(for: url!)
-            .map({$0.data})
-            .decode(type: [Post].self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
-    }
-    
-    
     func getComment(request:URLRequest) -> AnyPublisher<[Comment], Error>{
         return URLSession.shared.dataTaskPublisher(for: request)
             .map({$0.data})
@@ -64,7 +56,35 @@ class NetworkService{
 }
 
 
-
-class AwaitAsyncImp{
+/// Using Async and Await to call multiple API
+class NetworkService_AwaitAsync{
+    func getUser(request:URLRequest) async -> Result<[User], Error>{
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let users = try JSONDecoder().decode([User].self, from: data)
+            return .success(users)
+        } catch let error {
+            return .failure(error)
+        }
+    }
     
+    func getPost(request:URLRequest)  async -> Result<[Post], Error>{
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let post = try JSONDecoder().decode([Post].self, from: data)
+            return .success(post)
+        } catch let error {
+            return .failure(error)
+        }
+    }
+    
+    func getComment(request:URLRequest)  async -> Result<[Comment], Error>{
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let comment = try JSONDecoder().decode([Comment].self, from: data)
+            return .success(comment)
+        } catch let error {
+            return .failure(error)
+        }
+    }
 }
