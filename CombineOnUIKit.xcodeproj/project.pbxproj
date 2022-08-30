@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E31E2ADD28BB83B6000ACB49 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31E2ADC28BB83B6000ACB49 /* NetworkManager.swift */; };
 		E33AEFAE28A7B12E0061512F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFAD28A7B12E0061512F /* AppDelegate.swift */; };
 		E33AEFB028A7B12E0061512F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFAF28A7B12E0061512F /* SceneDelegate.swift */; };
 		E33AEFB228A7B12E0061512F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AEFB128A7B12E0061512F /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E31E2ADC28BB83B6000ACB49 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E33AEFAA28A7B12E0061512F /* CombineOnUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineOnUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33AEFAD28A7B12E0061512F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E33AEFAF28A7B12E0061512F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				E33AEFF028A7B69C0061512F /* APIRouterStructure.swift */,
 				E33AEFC728A7B2D90061512F /* APIRouter.swift */,
 				E33AEFF828A7BAF00061512F /* NetworkService.swift */,
+				E31E2ADC28BB83B6000ACB49 /* NetworkManager.swift */,
 			);
 			name = NetworkServices;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E31E2ADD28BB83B6000ACB49 /* NetworkManager.swift in Sources */,
 				E33AEFB228A7B12E0061512F /* ViewController.swift in Sources */,
 				E33AEFC828A7B2D90061512F /* APIRouter.swift in Sources */,
 				E33AEFCA28A7B4350061512F /* Constant.swift in Sources */,

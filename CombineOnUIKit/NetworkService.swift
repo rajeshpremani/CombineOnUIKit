@@ -35,7 +35,7 @@ class NetworkService_Combine{
     
     func getUser(request:URLRequest) -> AnyPublisher<[User], Error>{
         return URLSession.shared.dataTaskPublisher(for: request)
-            .map({$0.data})
+            .map(\.data)
             .decode(type: [User].self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
@@ -58,6 +58,16 @@ class NetworkService_Combine{
 
 /// Using Async and Await to call multiple API
 class NetworkService_AwaitAsync{
+    func genric<T:Decodable>(request:URLRequest, type: T.Type) async -> Result<[T], Error>{
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let response = try JSONDecoder().decode([T].self, from: data)
+            return .success(response)
+        } catch let error {
+            return .failure(error)
+        }
+    }
+    
     func getUser(request:URLRequest) async -> Result<[User], Error>{
         do {
             let (data, _) = try await URLSession.shared.data(for: request)

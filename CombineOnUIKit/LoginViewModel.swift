@@ -80,4 +80,35 @@ extension LoginViewModel{
             print(comments)
         }
     }
+    
+    func fetchingComments_WithAwaitAsyncGenricFunc(){
+        Task(priority: .background) {
+            let usersResult = await awaitAsync.genric(request: APIRouterStructure(apiRouter: .users).asURLRequest(), type: User.self)
+            
+            guard case .success(let users) = usersResult, let user = users.first else {return}
+            let postsResult = await awaitAsync.genric(request: APIRouterStructure(apiRouter: .posts(userId: user.id)).asURLRequest(), type: Post.self)
+            guard case .success(let posts) = postsResult, let post = posts.first else {return}
+            let commentResult = await awaitAsync.genric(request: APIRouterStructure(apiRouter: .comment(postId: post.id)).asURLRequest(), type: Comment.self)
+            guard case .success(let comments) = commentResult else {return}
+            self.comments = comments
+            //Update View on Main thread after getting data
+            print(comments)
+        }
+    }
+}
+
+//Generic Combine
+extension LoginViewModel{
+    func fetchingComments_WithGenCom(){
+        NetworkManager.shared.getData(endpoint: .details, type: User.self)
+            .sink { completion in
+                switch completion {
+                case .failure(let error): print("Error: ", error.localizedDescription)
+                case .finished: print("Finished")
+                }
+        } receiveValue: { users in
+            print(users)
+        }.store(in: &subscribers)
+
+    }
 }
